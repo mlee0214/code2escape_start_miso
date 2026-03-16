@@ -67,3 +67,12 @@ You can change it, add to it, or delete it.
   width: 200px;
   height: auto;
 }
+#room1-secret-door {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;  /* Adjust these sizes until it feels right! */
+  height: 100px;
+  cursor: pointer; /* This shows the player something is there if they hover */
+  display: none;   /* Hide it at the very start of the game */
+}

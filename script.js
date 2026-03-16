@@ -9,3 +9,18 @@ imageButton.addEventListener("click", function () {
   imageButton.style.display = "none";
   textBox.style.display = "none";
 });
+const secretDoor = document.getElementById("room1-secret-door");
+
+// Inside your existing imageButton click listener, add:
+imageButton.addEventListener("click", function () {
+  // ... your existing code (scene.style.backgroundImage, etc.) ...
+  
+  secretDoor.style.display = "block"; // Turn on the invisible button!
+});
+
+// Create a NEW listener for the secret door:
+secretDoor.addEventListener("click", function() {
+  scene.style.backgroundImage = 'url("background3.png")';
+  secretDoor.style.display = "none"; // Hide the secret door so they don't click it again
+  console.log("Secret door found!");
+});
