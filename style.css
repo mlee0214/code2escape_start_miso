@@ -4,24 +4,36 @@ Below is basic CSS styling.
 You can change it, add to it, or delete it.
 */
 
-body {
-  margin: 0;
-  width: 100vh;            /* Keeps it from touching the edges */
-  margin: 0;  
-  padding: 0;
-  height: 100vh;
-} 
 
 #scene {
+  width: 100vw;
+  height: 100vh;
+  
+  /* 1. This ensures the whole image is visible */
+  background-size: contain; 
+  
+  /* 2. This keeps the image in the middle */
+  background-position: center; 
+  background-repeat: no-repeat;
+  
+  /* 3. Choose a color that matches your image's edges! */
+  background-color: #1a1a1a; 
+  background-image: url(background1.png);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
  #scene {
-  width: 100vh;            /* Keeps it from touching the edges */
+  width: 250vh;            /* Keeps it from touching the edges */
   margin: 0;  
   padding: 0;
   height: 100vh;   /* Centers the box and adds top/bottom margins */
   
   /* Keep your other background and flex properties here! */
 }
-  background-image: url("background1.png");
+  background-image: url(background1.png);
   
   background-position: center;
   background-repeat: no-repeat;
