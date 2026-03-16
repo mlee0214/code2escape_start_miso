@@ -17,10 +17,3 @@ imageButton.addEventListener("click", function () {
   
   secretDoor.style.display = "block"; // Turn on the invisible button!
 });
-
-add:addEventListener
-secretDoor.addEventListener("click", function() {
-  scene.style.backgroundImage = 'url("background3.png")';
-  secretDoor.style.display = "none"; // Hide the secret door so they don't click it again
-  console.log("Secret door found!");
-});

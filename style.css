@@ -6,68 +6,56 @@ You can change it, add to it, or delete it.
 
 
 #scene {
-  width: 100vw;
-  height: 100vh;
-  
-  /* 1. This ensures the whole image is visible */
-  background-size: contain; 
-  
-  /* 2. This keeps the image in the middle */
-  background-position: center; 
-  background-repeat: no-repeat;
-  
-  /* 3. Choose a color that matches your image's edges! */
-  background-color: #1a1a1a; 
-  background-image: url(background1.png);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-#room1-secret-door {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100px;  /* Adjust these sizes until it feels right! */
-  height: 100px;
-  cursor: pointer; /* This shows the player something is there if they hover */
-  display: none;   /* Hide it at the very start of the game */
-}
-
- #scene {
-  width: 250vh;            /* Keeps it from touching the edges */
-  margin: 0;  
+  width: 250vh;
+  /* Keeps it from touching the edges */
+  margin: 0;
   padding: 0;
-  height: 100vh;   /* Centers the box and adds top/bottom margins */
-  
-  /* Keep your other background and flex properties here! */
-}
-  background-image: url(background1.png);
-  
+  height: 100vh;
+  /* 1. This ensures the whole image is visible */
+  background-size: contain;
+
+  /* 2. This keeps the image in the middle */
   background-position: center;
   background-repeat: no-repeat;
+
+  /* 3. Choose a color that matches your image's edges! */
+  background-color: #1a1a1a;
+  background-image: url("background1.png");
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-}
 
-/* TEXT BOX */
-#textBox {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-
-  padding: 20px 30px;
-  border-radius: 20px;
-
-  font-size: 24px;   /* change this freely */
-  max-width: 80%;
-  text-align: center;
-
-  width: fit-content;   /* expands to content */
-  height: auto;
-}
+  #room1-secret-door {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    /* Adjust these sizes until it feels right! */
+    height: 100px;
+    cursor: pointer;
+    /* This shows the player something is there if they hover */
+    display: none;
+    /* Hide it at the very start of the game */
+  }
 
 
+  /* TEXT BOX */
+  #textBox {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+
+    padding: 20px 30px;
+    border-radius: 20px;
+
+    font-size: 24px;
+    /* change this freely */
+    max-width: 80%;
+    text-align: center;
+
+    width: fit-content;
+    /* expands to content */
+    height: auto;
+  }
