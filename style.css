@@ -40,8 +40,8 @@ body, html {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 150px;
-  height: 150px;
+  width: 150vw;
+  height: 150vh;
   cursor: pointer;
   display: none;
   z-index: 10;
