@@ -40,20 +40,10 @@ body, html {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 150vw;
-  height: 150vh;
+  width: 150px;
+  height: 150px;
   cursor: pointer;
   display: none;
   z-index: 10;
-  /* background-color: rgba(255, 0, 0, 0.3); */ /* Uncomment to see the hitbox while testing */
-}
-
-/* The Button for Background 3 */
-#room1-game-start {
-  position: absolute;
-  bottom: 150vw;
-  right: 150vh;
-  width: 150vw;
-  cursor: pointer;
-  z-index: 15;
+  /* background-color: rgba(255, 0, 0, 0.3); */ /* Delete the /* to see the box for testing */
 }
