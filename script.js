@@ -2,42 +2,28 @@ const scene = document.getElementById("scene");
 const imageButton = document.getElementById("imageButton");
 const textBox = document.getElementById("textBox");
 const secretDoor = document.getElementById("room1-secret-door");
-const gameStartBtn = document.getElementById("room1-game-start");
 
-// 1. Move from Background 1 to Background 2
+// STEP 1: Click "Continue" on Page 1 to go to Page 2
 imageButton.addEventListener("click", function () {
   scene.style.backgroundImage = 'url("background2.png")';
   imageButton.style.display = "none";
   textBox.style.display = "none";
-  secretDoor.style.display = "block"; // Turn on the secret area
+  secretDoor.style.display = "block"; // Enables the secret corner
+  console.log("Moved to Page 2");
 });
 
-// 2. Move from Background 2 to 3.png
-secretDoor.addEventListener("click", function () {
+// STEP 2: Click Secret Corner on Page 2 to go to Page 3
+secretDoor.addEventListener("click", function (event) {
+  // This stops the click from triggering the redirection immediately
+  event.stopPropagation(); 
+  
   scene.style.backgroundImage = 'url("3.png")';
-  secretDoor.style.display = "none"; // Hide the secret area
-  gameStartBtn.style.display = "block"; // Show the game_start image
-});
+  secretDoor.style.display = "none"; // Hide the corner
+  
+  console.log("Moved to Page 3. Now click anywhere to exit!");
 
-// 3. Move from 3.png to "Something"
-gameStartBtn.addEventListener("click", function () {gameStartBtn.addEventListener("click", function () {
-  // This is the magic line that sends the player to the next room!
-  window.location.href = "https://isladministrator.github.io/escape-room-puzzle-anya-varya/";
-});
-  // LEAVE BLANK FOR YOU: Add your "something" code here!
-  console.log("Player clicked the game_start button!");
-});
-
-// 2. This 'listens' for a click on the secret spot in Background 2
-secretDoor.addEventListener("click", function () {
-  // Changes the background to your third image
-  scene.style.backgroundImage = 'url("3.png")';
-  
-  // Hides the secret hit-box so it can't be clicked again
-  secretDoor.style.display = "none"; 
-  
-  // Shows your 'game_start.png' button for the next step
-  gameStartBtn.style.display = "block"; 
-  
-  console.log("Secret path found! Moving to the final stage.");
+  // STEP 3: Click anywhere on the scene on Page 3 to Redirect
+  scene.addEventListener("click", function() {
+    window.location.href = "https://isladministrator.github.io/escape-room-puzzle-anya-varya/";
+  });
 });
