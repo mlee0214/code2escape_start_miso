@@ -20,7 +20,10 @@ secretDoor.addEventListener("click", function () {
 });
 
 // 3. Move from 3.png to "Something"
-gameStartBtn.addEventListener("click", function () {
+gameStartBtn.addEventListener("click", function () {gameStartBtn.addEventListener("click", function () {
+  // This is the magic line that sends the player to the next room!
+  window.location.href = "https://isladministrator.github.io/escape-room-puzzle-anya-varya/";
+});
   // LEAVE BLANK FOR YOU: Add your "something" code here!
   console.log("Player clicked the game_start button!");
 });

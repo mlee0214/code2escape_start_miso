@@ -51,9 +51,9 @@ body, html {
 /* The Button for Background 3 */
 #room1-game-start {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 150px;
+  bottom: 150vw;
+  right: 150vh;
+  width: 150vw;
   cursor: pointer;
   z-index: 15;
 }
