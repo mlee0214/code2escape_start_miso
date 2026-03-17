@@ -24,3 +24,17 @@ gameStartBtn.addEventListener("click", function () {
   // LEAVE BLANK FOR YOU: Add your "something" code here!
   console.log("Player clicked the game_start button!");
 });
+
+// 2. This 'listens' for a click on the secret spot in Background 2
+secretDoor.addEventListener("click", function () {
+  // Changes the background to your third image
+  scene.style.backgroundImage = 'url("3.png")';
+  
+  // Hides the secret hit-box so it can't be clicked again
+  secretDoor.style.display = "none"; 
+  
+  // Shows your 'game_start.png' button for the next step
+  gameStartBtn.style.display = "block"; 
+  
+  console.log("Secret path found! Moving to the final stage.");
+});
