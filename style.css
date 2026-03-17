@@ -1,61 +1,61 @@
-/*
-This is a CSS comment :) Text just for humans, it is not part of the code
-Below is basic CSS styling.
-You can change it, add to it, or delete it.
-*/
-
-
-#scene {
-  width: 250vh;
-  /* Keeps it from touching the edges */
+/* 1. RESET: Tells the browser not to add extra spacing around the edges */
+body, html {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  /* 1. This ensures the whole image is visible */
-  background-size: contain;
+  overflow: hidden; /* Prevents scrollbars from appearing */
+  background-color: #1a1a1a; /* Matches your game's dark theme */
+}
 
-  /* 2. This keeps the image in the middle */
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* 3. Choose a color that matches your image's edges! */
-  background-color: #1a1a1a;
-  background-image: url("background1.png");
-
+/* 2. THE MAIN GAME SCREEN */
+#scene {
+  width: 100vw;   /* 100% of any screen width */
+  height: 100vh;  /* 100% of any screen height */
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 
-  #room1-secret-door {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100px;
-    /* Adjust these sizes until it feels right! */
-    height: 100px;
-    cursor: pointer;
-    /* This shows the player something is there if they hover */
-    display: none;
-    /* Hide it at the very start of the game */
-  }
+  /* BACKGROUND LOGIC */
+  background-image: url("background1.png");
+  background-size: contain;    /* This is key! It fits the whole image without cutting */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;          /* This keeps the secret door 'pinned' inside the scene */
+}
 
+/* 3. THE TEXT BOX */
+#textBox {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #00ffff; /* ISL Cyan-400 color */
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.5rem; /* Dynamic font size */
+  max-width: 70%;
+  text-align: center;
+  z-index: 5;
+}
 
-  /* TEXT BOX */
-  #textBox {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+/* 4. THE START BUTTON */
+#imageButton {
+  cursor: pointer;
+  width: 20vw;      /* Button size changes based on screen width */
+  max-width: 200px; /* But never gets too huge */
+  min-width: 100px; /* And never gets too tiny */
+  height: auto;
+  z-index: 5;
+}
 
-    padding: 20px 30px;
-    border-radius: 20px;
-
-    font-size: 24px;
-    /* change this freely */
-    max-width: 80%;
-    text-align: center;
-
-    width: fit-content;
-    /* expands to content */
-    height: auto;
-  }
+/* 5. THE SECRET CLICK AREA (Bottom Right Corner) */
+#room1-secret-door {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 0, 0, 0.3); /* Temporary red so you can test it! */
+  cursor: pointer;
+  display: none; /* JavaScript will show this when background2 loads */
+  z-index: 10;
+}

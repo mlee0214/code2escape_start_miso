@@ -1,19 +1,20 @@
-console.log("Script loaded");
-
 const scene = document.getElementById("scene");
 const imageButton = document.getElementById("imageButton");
 const textBox = document.getElementById("textBox");
-
-imageButton.addEventListener("click", function () {
-  scene.style.backgroundImage = 'url("background2.png")';
-  imageButton.style.display = "none";
-  textBox.style.display = "none";
-});
 const secretDoor = document.getElementById("room1-secret-door");
 
-// Inside your existing imageButton click listener, add:
 imageButton.addEventListener("click", function () {
-  // ... your existing code (scene.style.backgroundImage, etc.) ...
+  // 1. Changes the background
+  scene.style.backgroundImage = 'url("background2.png")';
   
-  secretDoor.style.display = "block"; // Turn on the invisible button!
+  // 2. Hides the start screen items
+  imageButton.style.display = "none";
+  textBox.style.display = "none";
+  
+  // 3. Activates the secret click area for the next puzzle
+  if (secretDoor) {
+    secretDoor.style.display = "block";
+  }
+  
+  console.log("Room 1 complete! Now in Room 2.");
 });
