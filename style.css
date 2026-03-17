@@ -35,15 +35,15 @@ body, html {
   z-index: 5;
 }
 
-/* The Secret Corner for Background 2 */
+/* Page 2 Secret Corner */
 #room1-secret-door {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 150px;
-  height: 150px;
+  width: 150px;  /* Stay in the corner */
+  height: 150px; 
   cursor: pointer;
   display: none;
   z-index: 10;
-  /* background-color: rgba(255, 0, 0, 0.3); */ /* Delete the /* to see the box for testing */
+  /* background-color: rgba(255, 0, 0, 0.3); */ /* Uncomment this line to see the box for testing */
 }
